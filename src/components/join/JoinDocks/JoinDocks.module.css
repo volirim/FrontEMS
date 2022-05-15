@@ -1,0 +1,34 @@
+.container {
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.link:active {
+    color: black;
+}
+
+.link:visited {
+    color: black;
+}
+
+.link:hover {
+    color: black;
+}
+
+.link:focus {
+    color: black;
+}
+
+.iconText {
+    display: inline-block;
+    margin-left: 10px;
+}

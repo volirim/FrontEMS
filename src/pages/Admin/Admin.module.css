@@ -1,0 +1,15 @@
+.container {
+    flex: 1 1 auto;
+}
+
+.postForm {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.postTextarea {
+    resize: none;
+    width: 100%;
+    height: 200px;
+}

@@ -1,0 +1,89 @@
+.container {
+    display: none;
+    z-index: 500;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .container {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        border: 1px solid white;
+        border-radius: 15px;
+        margin: 5px;
+    }
+
+    .line1 {
+        width: 60%;
+        margin: 4px;
+        height: 3px;
+        border-radius: 10px;
+        background-color: white;
+        transition: 0.5s;
+    }
+
+    .line2 {
+        width: 60%;
+        margin: 4px;
+        height: 3px;
+        border-radius: 10px;
+        background-color: white;
+    }
+
+    .line3 {
+        width: 60%;
+        margin: 4px;
+        height: 3px;
+        border-radius: 10px;
+        background-color: white;
+        transition: 0.5s;
+    }
+
+    .containerOpened {
+        display: block;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        border: 1px solid white;
+        border-radius: 15px;
+        margin: 5px;
+        z-index: 500;
+    }
+    
+
+    .line1Opened {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        height: 3px;
+        transform: translate(-50%) rotate(45deg);
+        border-radius: 10px;
+        background-color: white;
+        transition: 0.5s;
+    } 
+
+    .line2Opened {
+        display: none;
+    }
+
+    .line3Opened {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        height: 3px;
+        transform: translate(-50%) rotate(-45deg);
+        border-radius: 10px;
+        background-color: white;
+        transition: 0.5s;
+    }
+}

@@ -1,0 +1,28 @@
+.container {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.imageBlock {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+}
+
+.newsBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        margin-top: 50px;
+    }
+}

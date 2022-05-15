@@ -1,0 +1,9 @@
+.text {
+    text-align: justify;
+}
+
+@media only screen and (max-width: 425px) {
+    .text {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px;
+    flex: 1 1 auto;
+}
+
+.imageBlock {
+    position: relative;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+}
+
+.imageText {
+    position: absolute;
+    left: 5%;
+    top: 60%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: white;
+}
+
+.infoBlock {
+    padding: 20px 10%;
+}
+
+.buttons {
+    padding-top: 30px;
+    margin-bottom: 40px;
+}
+
+.infoButton {
+    width: 126px;
+    padding: 10px;
+    border: none;
+    color: white;
+    background-color: #034C82;
+}
+
+.infoButtonClicked {
+    width: 126px;
+    padding: 10px;
+    border: 1px solid #034C82;
+    color: #034C82;
+    background-color: white;
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        margin-top: 50px;
+    }
+}

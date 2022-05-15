@@ -1,0 +1,25 @@
+.container {
+    flex: 1 1 auto;
+}
+
+.imageBlock {
+    position: relative;
+    width: 100%;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+}
+
+.textBlock {
+    height: 400px;
+    text-align: center;
+    font-size: 30px;
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        margin-top: 50px;
+    }
+}

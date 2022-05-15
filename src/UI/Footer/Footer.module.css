@@ -1,0 +1,265 @@
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contactsBlock {
+    background: #A1A6AA;
+    display: grid;
+    grid-template-areas: 
+    "a . . ."
+    "b b b b";
+    grid-template-rows: 40px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.logo {
+    grid-area: a;
+    margin-bottom: 20px;
+}
+
+.contacts {
+    grid-area: b;
+    display: grid;
+    grid-template-areas: 
+    "c d";
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    color: white;
+}
+
+.contactsTitle {
+    text-align: center;
+}
+
+.contactsText {
+    text-align: center;
+}
+
+.links {
+    grid-area: d;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.feedback {
+    display: flex;
+    width: 100%;
+    background: #525252CC;
+}
+
+.square {
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 20px 20px 20px 20px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: #034C82;
+}
+
+.feedbackBlock {
+    width: 100%;
+    color: white;
+}
+
+.feedbackTitle {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.feedbackForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 0.2fr);
+    grid-template-areas: 
+    "first fifth"
+    "second sixth"
+    "third textarea"
+    "fourth textarea"
+    "submit annotation";
+    padding-bottom: 20px;
+}
+
+.feedbackFormInput {
+    grid-area: a;
+    margin-bottom: 10px;
+    margin-right: 10%;
+    padding: 5px;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    border: 2px solid white;
+}
+
+.inputFirst {
+    grid-area: first;
+}
+
+.inputSecond {
+    grid-area: second;
+}
+
+.inputThird {
+    grid-area: third;
+}
+
+.inputFourth {
+    grid-area: fourth;
+}
+
+.inputFifth {
+    grid-area: fifth;
+}
+
+.inputSixth {
+    grid-area: sixth;
+}
+
+.feedbackFormTextarea {
+    grid-area: textarea;
+    resize: none;
+    margin-bottom: 10px;
+    margin-right: 10%;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.feedbackFormSubmit {
+    place-self: start stretch;
+    grid-area: submit;
+    font-size: 16px;
+    margin-right: 10%;
+    background: #034C82;
+    color: white;
+    border: 1px solid white;
+}
+
+.feedbackFormAnnotation {
+    grid-area: annotation;
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .contactsTitle {
+        font-size: 30px;
+    }
+    
+    .contactsText {
+        font-size: 18px;
+    }
+    
+    .links {
+        font-size: 20px;
+    }
+
+    .feedbackFormAnnotation {
+        font-size: 13px
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "first"
+        "second";
+    }
+
+    .contactsBlock {
+        grid-area: second;
+    }
+
+    .feedbackBlock {
+        grid-area: first;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .feedbackForm {
+        padding: 0;
+    }
+
+    .square {
+        display: none;
+    }
+    .feedbackFormInput {
+        padding: 5px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .feedbackFormTextarea {
+        /* padding: 5px; */
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .feedbackFormSubmit {
+        padding: 5px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .feedbackFormAnnotation {
+        padding: 0px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .contactsTitle {
+        font-size: 19px;
+    }
+
+    .contactsText {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+
+
+    .feedbackForm {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "first"
+        "second"
+        "third"
+        "fourth"
+        "fifth"
+        "sixth"
+        "textarea"
+        "textarea"
+        "submit"
+        "annotation"
+        ;
+    }
+
+    .contacts {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        "c"
+        "d"
+        ;
+    }
+
+    .contactsText {
+        margin-left: 5%;
+        text-align: left;
+    }
+
+    .links::before {
+        content: '';
+        width: 80%;
+        height: 2px;
+        transform: translateY(-1700%);
+        background-color: rgba(0, 0, 0, 0.171);
+    }
+}
