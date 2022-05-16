@@ -4,7 +4,7 @@ const Header = () => {
     
     return (
         <nav className={styles.container}>
-            <img src='./static/pictures/logo.svg' alt="logo"/>
+            <img src='./static/pictures/logo.svg' alt="logo" className={styles.logo} />
             <input id="menu-toggle" type="checkbox" />
             <label className='menu-button-container' htmlFor="menu-toggle">
             <div className='menu-button'></div>

@@ -5,12 +5,12 @@
 
 @media only screen and (max-width: 480px) {
     .link{
-        font-size: 13px;
+        font-size: 17px;
     }    
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 380px) {
     .link{
-        font-size: 20px;
+        font-size: 16px;
     }    
 }

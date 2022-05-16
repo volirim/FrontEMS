@@ -228,7 +228,47 @@
 
 /* 1440 PX */
 
+@media only screen and (max-width: 2560px) {
+
+  .filmPictureBlock {
+    height: 800px;
+  }
+
+  .itemsContainer {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .text {
+    font-size: 25px;
+    width: 550px;
+  }
+
+  .filmPictureBlock::before {
+    content: '';
+    background-image: url('../../../public/static/pictures/filmPictureLink.png');
+    width: 179px;
+    height: 160px;
+    background-size: 156px 140px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #0000003f;
+  }
+
+  .filmPictureBlock::after {
+    font-size: 45px;
+  }
+}
+
 @media only screen and (max-width: 2000px) {
+
+  .filmPictureBlock {
+    height: 600px;
+  }
 
   .itemsContainer {
     display: flex;
@@ -244,12 +284,26 @@
     width: 550px;
   }
 
+  
+  .filmPictureBlock::before {
+    content: url(../../../public/static/pictures/filmPictureLink.png);
+    width: unset;
+    height: unset;
+    background-image: none;
+    background-size: unset;
+    font-size: unset;
+  }
+
   .filmPictureBlock::after {
     font-size: 40px;
   }
 }
 
 @media only screen and (max-width: 1440px) {
+  .filmPictureBlock {
+    height: 500px;
+  }
+  
   .filmPictureBlock:hover {
     background-color:rgba(0, 0, 0, 0.568);
     filter:brightness(50%);
@@ -296,6 +350,12 @@
     opacity: 100%;
     bottom: 10%;
     transition: 0.7s;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .filmPictureBlock {
+    height: 400px;
   }
 }
 

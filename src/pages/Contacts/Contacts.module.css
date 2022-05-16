@@ -24,6 +24,16 @@
     text-align: center;
 }
 
+@media only screen and (min-width: 2000px) and (max-width: 2560px) {
+    .textTitle {
+        font-size: 50px;
+    }
+
+    .textBlock {
+        font-size: 30px;
+    }
+}
+
 @media only screen and (max-width: 800px) {
     .container {
         margin-top: 50px;

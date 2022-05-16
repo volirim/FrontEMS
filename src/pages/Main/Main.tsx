@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import apiClient from '../../apiClient/apiClient';
 import MainPageItem from '../../components/MainPageItem/MainPageItem';
 import NewsItem from '../../components/NewsItem/NewsItem';
 import ProductsItem from '../../components/ProductsItem/ProductsItem';
@@ -12,11 +14,12 @@ const uniqid = require('uniqid');
 const array = [0,1,2];
 
 function App() {
+
   return (
     <div>
-      <div className={styles.container}></div>
-      {/* <div className={styles.container}>
-        <video autoPlay width="100%" loop src="./static/video/movie.mp4" muted className={styles.video}/>
+      {/* <div className={styles.container}></div> */}
+      <div className={styles.container}>
+        <video autoPlay width="100%" loop src="https://res.cloudinary.com/dft2opinn/video/upload/v1652727732/provovid/promo_wavcci.mp4" muted className={styles.video}/>
         <div className={styles.videoBackground} />
         <div className={styles.videoTextBlock}>
           <h2 className={styles.title}>Отраслевой союз «Электромашиностроение»</h2>
@@ -24,11 +27,11 @@ function App() {
             является организацией, включающей ведущих производителей электродвигателей на территории Российской Федерации и Республики Беларусь с долей рынка по производимым асинхронным электродвигателям не менее 70 %.
           </p>
         </div>
-      </div> */}
+      </div>
       <div className={styles.itemsContainer}>
         {mainPageItems.map(item => <MainPageItem img={item.img} title={item.title} text={item.text} key={uniqid()} id={mainPageItems.indexOf(item)} />)}
       </div>
-      <a href='https://youtube.com' target='_blank' rel="noreferrer" className={styles.filmPictureBlock} />
+      <a href='https://youtu.be/QlQ5xtAJDNw' target='_blank' rel="noreferrer" className={styles.filmPictureBlock} />
       <div className={styles.itemsContainer}>
         {mainPageItems2.map(item => <MainPageItem img={item.img} title={item.title} text={item.text} key={uniqid()}  id={mainPageItems2.indexOf(item)} />)}
       </div>
