@@ -13,17 +13,10 @@ const Admin = () => {
     const [secondText, setSecondText] = useState('');
     const [firstFile, setFirstFile] = useState<any>('');
     const [secondFile, setSecondFile] = useState<any>('');
+    const [firstImage, setFirstImage] = useState<string | ArrayBuffer | null>('static/pictures/admin/img.png');
+    const [secondImage, setSecondImage] = useState<string | ArrayBuffer | null>('static/pictures/admin/img.png');
 
     let imageLoading = false;
-    
-
-    useEffect(() => {
-        (async () => {
-            const accessPermitted = await apiClient.isAuthorised() 
-            !accessPermitted && navigate('/login')
-            console.log('paginate', await apiClient.get('posts?quantity=3'));
-        })()
-    },[])
 
     const handleFirstFile = (event: any) => {
         const filePath = event.target.files[0];
@@ -33,10 +26,11 @@ const Admin = () => {
             alert(checkResult.message)
         }
         imageLoading = true;
+        imageUtils.readURL(filePath).then(file => setFirstImage(file))  
         imageUtils.read(filePath).then(file => {
-            imageLoading = false; 
+            console.log(file);
+            imageLoading = false;             
             setFirstFile(file);
-            setTimeout(()=> console.log('[handleFirstFile] first file' ,firstFile), 1000);
         }).catch(()=> {
             imageLoading = false;
             alert('не удалость загрузить первое изображение')   
@@ -51,6 +45,7 @@ const Admin = () => {
             alert(checkResult.message)
         }
         imageLoading = true;
+        imageUtils.readURL(filePath).then(file => setSecondImage(file))  
         imageUtils.read(filePath).then(file => {
             imageLoading = false;    
             setSecondFile(file);
@@ -84,12 +79,19 @@ const Admin = () => {
     return (
         <div className={styles.container}>
             <form className={styles.postForm} onSubmit={handleSubmit}>
-                <input type="text" placeholder="Заголовок" onChange={(e)=> setTitle(e.target.value)} required/>
-                <input type="file" onInput={handleFirstFile} required/>
-                <textarea className={styles.postTextarea} onChange={(e)=> setFirstText(e.target.value)} required/>
-                <input type="file" onInput={handleSecondFile} />
-                <textarea className={styles.postTextarea} onChange={(e)=> setSecondText(e.target.value)}/>
-                <button type='submit'>отправить</button>
+                <h3>Создание поста</h3>
+                <input placeholder="Заголовок" className={styles.title} onChange={(e)=> setTitle(e.target.value)} required/>
+                <div className={styles.imageContainer}>
+                    <img src={typeof firstImage === 'string' ? firstImage : 'static/pictures/admin/img.png'} alt='вставьте изображение' className={styles.image}></img>
+                    <input type="file" onInput={handleFirstFile} required className={styles.file} />
+                </div>
+                <textarea className={styles.postTextarea} onChange={(e)=> setFirstText(e.target.value)} placeholder="Текст первого поста" required/>
+                <div className={styles.imageContainer}>
+                    <img src={typeof secondImage === 'string' ? secondImage : 'static/pictures/admin/img.png'} alt='вставьте изображение' className={styles.image}></img>
+                    <input type="file" onInput={handleSecondFile} className={styles.file}/>
+                </div>
+                <textarea className={styles.postTextarea} onChange={(e)=> setSecondText(e.target.value)} placeholder="Текст первого поста" />
+                <button type='submit' className={styles.addPostSubmit}>отправить</button>
             </form>
         </div>
     )

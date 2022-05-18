@@ -33,6 +33,17 @@ const imageUtils = {
             reader.onerror = () => {reject()}
         })
         
+    },
+
+    readURL: (file: any): Promise<string | ArrayBuffer | null> => {
+        return new Promise((resolve, reject)=> {
+            const reader: FileReader = new FileReader();
+            reader.readAsDataURL(file)
+            reader.onloadend = () => {                
+                resolve(reader.result)
+            }
+            reader.onerror = () => {reject()}
+        })
     }
 }
 

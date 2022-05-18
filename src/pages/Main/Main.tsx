@@ -31,7 +31,7 @@ function App() {
       <div className={styles.itemsContainer}>
         {mainPageItems.map(item => <MainPageItem img={item.img} title={item.title} text={item.text} key={uniqid()} id={mainPageItems.indexOf(item)} />)}
       </div>
-      <a href='https://youtu.be/QlQ5xtAJDNw' target='_blank' rel="noreferrer" className={styles.filmPictureBlock} />
+      <a href='https://youtu.be/azNuDDLCP8A' target='_blank' rel="noreferrer" className={styles.filmPictureBlock} />
       <div className={styles.itemsContainer}>
         {mainPageItems2.map(item => <MainPageItem img={item.img} title={item.title} text={item.text} key={uniqid()}  id={mainPageItems2.indexOf(item)} />)}
       </div>

@@ -1,15 +1,53 @@
 .container {
     flex: 1 1 auto;
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: start;
 }
 
 .postForm {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 80%;
+    justify-content: start;
+}
+
+.title {
+    width: 100%;
+}
+
+.file {
+    border-radius: 20px;
+    margin: 10px 0;
+    opacity: 0%;
+    width: 259px;
+    height: 194px;
+    z-index: 1;
+}
+
+.imageContainer {
+    position: relative;
+}
+
+.image {
+    border-radius: 20px;
+    border: 1px solid gray;
+    margin: 10px 0;
+    width: 259px;
+    height: 194px;
+    position: absolute;
+    left: 0;
+    z-index: 0;
 }
 
 .postTextarea {
     resize: none;
     width: 100%;
     height: 200px;
+}
+
+.addPostSubmit {
+    margin: 25px 0px 25px 0px;
 }
